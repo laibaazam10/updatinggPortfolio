@@ -1,0 +1,78 @@
+.my-animation::before {
+    content: '';
+    color: white;
+    font-size: clamp(20px, 5vw, 75px);
+    animation: noice 6s ease-in-out infinite;
+}
+
+.my-animation::after {
+    content: '';
+    color: white;
+    font-size: clamp(20px, 5vw, 75px);
+}
+
+@keyframes noice {
+    0% {
+        content: 'Full Stack Developer.';
+    }
+    25% {
+        content: 'Frontend Developer..';
+    }
+    50% {
+        content: 'Backend Developer';
+    }
+    75% {
+        content: 'Web Developer';
+    }
+    100% {
+        content: '.Net Developer';
+    }
+}
+
+@media (max-width: 480px) {
+    .my-animation::before,
+    .my-animation::after {
+        font-size: clamp(16px, 6vw, 40px);
+    }
+}
+
+.experience-section {
+  background: none;     /* no background */
+  padding: 60px 20px;
+  color: #ffffff;       /* white text */
+}
+
+.experience-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+  color: #ffffff;
+}
+
+.exp-box {
+  background: none;     /* no box background */
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-left: 3px solid #ffffff; /* simple white line */
+}
+
+.exp-box h3 {
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.exp-box p {
+  margin: 5px 0;
+  color: #ffffff;
+}
+
+.exp-box ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.exp-box ul li {
+  margin-bottom: 8px;
+  
+}

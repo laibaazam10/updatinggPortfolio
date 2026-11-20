@@ -1,0 +1,1300 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Me | Laiba Azam</title>
+
+    <meta name="description" content="Learn more about Laiba Azam, Full Stack Developer specializing in web, software and mobile application development.">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="kool.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* ABOUT HERO */
+
+        .about-hero {
+            min-height: 430px;
+            background: linear-gradient(135deg, #071e23, #0b3037, #134e5e);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 150px 0 90px;
+        }
+
+        .about-hero::before {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 50%;
+            right: 8%;
+            top: 5%;
+        }
+
+        .about-hero::after {
+            content: "";
+            position: absolute;
+            width: 230px;
+            height: 230px;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 50%;
+            right: 13%;
+            top: 18%;
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-hero-tag {
+            color: #5bbad5;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .about-hero h1 {
+            color: #fff;
+            font-size: clamp(38px, 6vw, 65px);
+            font-weight: 800;
+            margin: 18px 0;
+        }
+
+        .about-hero h1 span {
+            color: #5bbad5;
+        }
+
+        .about-hero p {
+            color: #d1e2e5;
+            font-size: 16px;
+            max-width: 650px;
+            line-height: 1.9;
+        }
+
+        .about-breadcrumb {
+            color: #a9c4ca;
+            margin-top: 25px;
+            font-size: 14px;
+        }
+
+        .about-breadcrumb a {
+            color: #5bbad5;
+            text-decoration: none;
+        }
+
+        /* INTRODUCTION */
+
+        .about-main-section {
+            background: #071e23;
+            padding: 90px 0;
+        }
+
+        .about-main-visual {
+            min-height: 410px;
+            background: linear-gradient(145deg, #0b3037, #134e5e);
+            border-radius: 22px;
+            border: 1px solid rgba(91,186,213,0.25);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 35px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .about-main-visual::before {
+            content: "";
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border: 1px solid rgba(91,186,213,0.2);
+            border-radius: 50%;
+        }
+
+        .about-main-icon {
+            width: 105px;
+            height: 105px;
+            background: rgba(91,186,213,0.12);
+            border: 1px solid #5bbad5;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #5bbad5;
+            font-size: 45px;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-main-visual h3 {
+            color: #fff;
+            font-size: 25px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-main-visual p {
+            color: #b8d3d9;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-code-text {
+            margin-top: 25px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            padding: 15px 25px;
+            color: #5bbad5;
+            font-family: monospace;
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-main-content h2 {
+            color: #fff;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        .about-main-content h2 span {
+            color: #5bbad5;
+        }
+
+        .about-main-content p {
+            color: #b7c9cc;
+            font-size: 14px;
+            line-height: 2;
+            margin-bottom: 17px;
+        }
+
+        .about-info-list {
+            margin-top: 25px;
+        }
+
+        .about-info-list div {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            margin-bottom: 16px;
+            color: #c9dadd;
+            font-size: 14px;
+        }
+
+        .about-info-list i {
+            color: #5bbad5;
+            width: 20px;
+        }
+
+        .about-info-list strong {
+            color: #fff;
+        }
+
+        /* COMMON SECTION */
+
+        .about-custom-section {
+            background: #0a272d;
+            padding: 85px 0;
+        }
+
+        .about-custom-section.alternate {
+            background: #071e23;
+        }
+
+        .about-section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .about-section-heading span {
+            color: #5bbad5;
+            font-size: 12px;
+            letter-spacing: 3px;
+            font-weight: 600;
+        }
+
+        .about-section-heading h2 {
+            color: #fff;
+            font-size: 35px;
+            font-weight: 700;
+            margin: 12px 0;
+        }
+
+        .about-section-heading h2 span {
+            color: #5bbad5;
+            letter-spacing: 0;
+            font-size: inherit;
+        }
+
+        .about-section-heading p {
+            color: #a9bec2;
+            font-size: 14px;
+        }
+
+        /* PERSONAL STRENGTHS */
+
+        .strength-card {
+            height: 100%;
+            background: #0d343d;
+            border: 1px solid rgba(91,186,213,0.15);
+            border-radius: 16px;
+            padding: 30px 24px;
+            transition: 0.3s;
+        }
+
+        .strength-card:hover {
+            transform: translateY(-7px);
+            border-color: #5bbad5;
+        }
+
+        .strength-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(91,186,213,0.12);
+            border-radius: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #5bbad5;
+            font-size: 23px;
+            margin-bottom: 22px;
+        }
+
+        .strength-card h4 {
+            color: #fff;
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .strength-card p {
+            color: #a9bec2;
+            font-size: 13px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* SKILLS */
+
+        .about-skill-box {
+            background: #0d343d;
+            border: 1px solid rgba(91,186,213,0.13);
+            padding: 22px 15px;
+            border-radius: 13px;
+            text-align: center;
+            height: 100%;
+            transition: 0.3s;
+        }
+
+        .about-skill-box:hover {
+            transform: translateY(-5px);
+            border-color: #5bbad5;
+        }
+
+        .about-skill-box i {
+            font-size: 30px;
+            color: #5bbad5;
+            margin-bottom: 14px;
+        }
+
+        .about-skill-box h5 {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .about-skill-box small {
+            display: block;
+            color: #8eafb5;
+            margin-top: 7px;
+            font-size: 11px;
+        }
+
+        /* EXPERIENCE */
+
+        .about-timeline {
+            max-width: 850px;
+            margin: auto;
+            position: relative;
+        }
+
+        .about-timeline::before {
+            content: "";
+            position: absolute;
+            left: 27px;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            background: rgba(91,186,213,0.3);
+        }
+
+        .about-timeline-card {
+            position: relative;
+            padding-left: 85px;
+            margin-bottom: 35px;
+        }
+
+        .about-timeline-icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 55px;
+            height: 55px;
+            background: #134e5e;
+            border: 2px solid #5bbad5;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5bbad5;
+            font-size: 20px;
+            z-index: 1;
+        }
+
+        .about-timeline-content {
+            background: #0d343d;
+            border: 1px solid rgba(91,186,213,0.15);
+            border-radius: 15px;
+            padding: 25px;
+        }
+
+        .about-timeline-content span {
+            color: #5bbad5;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .about-timeline-content h3 {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            margin: 10px 0 5px;
+        }
+
+        .about-timeline-content h5 {
+            color: #a9bec2;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .about-timeline-content p {
+            color: #a9bec2;
+            font-size: 13px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* GOAL SECTION */
+
+        .about-goal-box {
+            background: linear-gradient(135deg, #0b3037, #134e5e);
+            border: 1px solid rgba(91,186,213,0.25);
+            padding: 55px 30px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .about-goal-box i {
+            color: #5bbad5;
+            font-size: 42px;
+            margin-bottom: 22px;
+        }
+
+        .about-goal-box h2 {
+            color: #fff;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .about-goal-box p {
+            color: #c0d4d8;
+            font-size: 14px;
+            line-height: 1.9;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width: 768px) {
+
+            .about-hero {
+                min-height: 370px;
+                padding: 130px 0 65px;
+            }
+
+            .about-hero h1 {
+                font-size: 40px;
+            }
+
+            .about-main-section,
+            .about-custom-section {
+                padding: 65px 0;
+            }
+
+            .about-main-content h2 {
+                font-size: 25px;
+                margin-top: 15px;
+            }
+
+            .about-section-heading h2 {
+                font-size: 28px;
+            }
+
+            .about-timeline-card {
+                padding-left: 70px;
+            }
+
+            .about-goal-box h2 {
+                font-size: 24px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top portfolio-navbar">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                Laiba <span>Azam</span>
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+
+                <ul class="navbar-nav align-items-lg-center gap-lg-3">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="certificate.html">Certificates</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="./image/newCV.pdf" download class="nav-resume">
+                            Download CV <i class="fa-solid fa-download"></i>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+</header>
+
+
+<!-- ABOUT HERO -->
+
+<section class="about-hero">
+
+    <div class="container">
+
+        <div class="about-hero-content">
+
+            <span class="about-hero-tag">
+                GET TO KNOW ME
+            </span>
+
+            <h1>About <span>Me</span></h1>
+
+            <p>
+                I'm Laiba Azam, a Full Stack Developer passionate about
+                creating modern websites, complete software solutions
+                and user-friendly mobile applications.
+            </p>
+
+            <div class="about-breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-angle-right mx-2"></i>
+                About Me
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT INTRODUCTION -->
+
+<section class="about-main-section">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-5">
+
+                <div class="about-main-visual">
+
+                    <div class="about-main-icon">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+
+                    <h3>Laiba Azam</h3>
+
+                    <p>Full Stack Developer</p>
+
+                    <div class="about-code-text">
+                        Design. Develop. Innovate.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-7">
+
+                <div class="about-main-content">
+
+                    <h2>
+                        Turning Ideas Into
+                        <span>Digital Solutions</span>
+                    </h2>
+
+                    <p>
+                        I am a passionate and dedicated Full Stack Developer
+                        who enjoys designing and developing responsive websites,
+                        complete software systems and user-friendly mobile applications.
+                    </p>
+
+                    <p>
+                        My development journey includes working with frontend
+                        and backend technologies such as HTML, CSS, JavaScript,
+                        Bootstrap, React.js, Node.js, Express.js, MongoDB,
+                        PHP, Laravel, MySQL, ASP.NET Core and Flutter.
+                    </p>
+
+                    <p>
+                        I enjoy working on different stages of development,
+                        from creating attractive user interfaces to implementing
+                        backend functionality and managing databases.
+                    </p>
+
+                    <p>
+                        I believe in continuous learning, improving my technical
+                        skills and building practical solutions that make everyday
+                        tasks easier and more efficient.
+                    </p>
+
+
+                    <div class="about-info-list">
+
+                        <div>
+                            <i class="fa-solid fa-user"></i>
+                            <span>Name: <strong>Laiba Azam</strong></span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Location: <strong>Karachi, Pakistan</strong></span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>Email: <strong>laibaazam116@gmail.com</strong></span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-code"></i>
+                            <span>Specialization: <strong>Full Stack Development</strong></span>
+                        </div>
+
+                    </div>
+
+                    <a href="./image/newCV.pdf" download class="primary-btn mt-3">
+                        Download My CV
+                        <i class="fa-solid fa-download"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHAT I DO -->
+
+<section class="about-custom-section">
+
+    <div class="container">
+
+        <div class="about-section-heading">
+
+            <span>MY EXPERTISE</span>
+
+            <h2>What I <span>Do</span></h2>
+
+            <p>Different areas of development I enjoy working in.</p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="strength-card">
+
+                    <div class="strength-icon">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+
+                    <h4>Web Development</h4>
+
+                    <p>
+                        Creating responsive and modern websites with
+                        attractive interfaces and smooth user experiences.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="strength-card">
+
+                    <div class="strength-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <h4>Software Development</h4>
+
+                    <p>
+                        Developing functional software systems with
+                        organized backend logic and database management.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="strength-card">
+
+                    <div class="strength-icon">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+
+                    <h4>Mobile App Development</h4>
+
+                    <p>
+                        Exploring mobile application development using
+                        Flutter and Dart to build user-friendly applications.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="strength-card">
+
+                    <div class="strength-icon">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+
+                    <h4>Database Management</h4>
+
+                    <p>
+                        Working with SQL Server, MySQL and MongoDB
+                        to organize and manage application data.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="strength-card">
+
+                    <div class="strength-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+
+                    <h4>E-Commerce Solutions</h4>
+
+                    <p>
+                        Building online shopping experiences with
+                        product management and user-friendly interfaces.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="strength-card">
+
+                    <div class="strength-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+
+                    <h4>Creative Problem Solving</h4>
+
+                    <p>
+                        Finding practical solutions to development
+                        challenges through logical thinking and creativity.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TECHNICAL SKILLS -->
+
+<section class="about-custom-section alternate">
+
+    <div class="container">
+
+        <div class="about-section-heading">
+
+            <span>MY TECHNICAL BACKGROUND</span>
+
+            <h2>Technologies I <span>Use</span></h2>
+
+            <p>
+                Tools and technologies I work with during development.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="about-skill-box">
+                    <i class="fa-brands fa-html5"></i>
+                    <h5>HTML5</h5>
+                    <small>Frontend</small>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="about-skill-box">
+                    <i class="fa-brands fa-css3-alt"></i>
+                    <h5>CSS3</h5>
+                    <small>Frontend</small>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="about-skill-box">
+                    <i class="fa-brands fa-js"></i>
+                    <h5>JavaScript</h5>
+                    <small>Programming</small>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="about-skill-box">
+                    <i class="fa-brands fa-bootstrap"></i>
+                    <h5>Bootstrap</h5>
+                    <small>Framework</small>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="about-skill-box">
+                    <i class="fa-brands fa-react"></i>
+                    <h5>React.js</h5>
+                    <small>MERN Stack</small>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="about-skill-box">
+                    <i class="fa-brands fa-node-js"></i>
+                    <h5>Node.js</h5>
+                    <small>MERN Stack</small>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="about-skill-box">
+                    <i class="fa-solid fa-server"></i>
+                    <h5>Express.js</h5>
+                    <small>MERN Stack</small>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="about-skill-box">
+                    <i class="fa-solid fa-leaf"></i>
+                    <h5>MongoDB</h5>
+                    <small>MERN Stack</small>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="about-skill-box">
+                    <i class="fa-brands fa-php"></i>
+                    <h5>PHP</h5>
+                    <small>Backend</small>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="about-skill-box">
+                    <i class="fa-brands fa-laravel"></i>
+                    <h5>Laravel</h5>
+                    <small>Framework</small>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="about-skill-box">
+                    <i class="fa-brands fa-microsoft"></i>
+                    <h5>ASP.NET Core</h5>
+                    <small>Backend</small>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="about-skill-box">
+                    <i class="fa-solid fa-database"></i>
+                    <h5>MySQL</h5>
+                    <small>Database</small>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="about-skill-box">
+                    <i class="fa-solid fa-database"></i>
+                    <h5>SQL Server</h5>
+                    <small>Database</small>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="about-skill-box">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <h5>Flutter</h5>
+                    <small>Mobile Development</small>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="about-skill-box">
+                    <i class="fa-solid fa-code"></i>
+                    <h5>Dart</h5>
+                    <small>Programming</small>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="about-skill-box">
+                    <i class="fa-brands fa-github"></i>
+                    <h5>Git & GitHub</h5>
+                    <small>Version Control</small>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section class="about-custom-section">
+
+    <div class="container">
+
+        <div class="about-section-heading">
+
+            <span>MY PROFESSIONAL JOURNEY</span>
+
+            <h2>Work <span>Experience</span></h2>
+
+            <p>My development experience and practical projects.</p>
+
+        </div>
+
+
+        <div class="about-timeline">
+
+            <div class="about-timeline-card">
+
+                <div class="about-timeline-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <div class="about-timeline-content">
+
+                    <span>2026</span>
+
+                    <h3>Web Developer</h3>
+
+                    <h5>Cuir Collection - Leather Brand</h5>
+
+                    <p>
+                        Developed a modern e-commerce website using
+                        ASP.NET technologies. Worked on product pages,
+                        categories, responsive layouts and user experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-timeline-card">
+
+                <div class="about-timeline-icon">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+
+                <div class="about-timeline-content">
+
+                    <span>2026</span>
+
+                    <h3>Web Developer</h3>
+
+                    <h5>The D Care Medical Company</h5>
+
+                    <p>
+                        Developed a responsive medical company website
+                        using HTML, CSS and Bootstrap. Focused on
+                        modern design, structured content and responsive layouts.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PERSONAL APPROACH -->
+
+<section class="about-custom-section alternate">
+
+    <div class="container">
+
+        <div class="about-section-heading">
+
+            <span>MY APPROACH</span>
+
+            <h2>What Makes Me <span>Different</span></h2>
+
+            <p>The values that guide my development journey.</p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="strength-card">
+
+                    <div class="strength-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+
+                    <h4>Problem Solving</h4>
+
+                    <p>
+                        I enjoy understanding problems and developing
+                        logical, practical solutions through programming.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="strength-card">
+
+                    <div class="strength-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+
+                    <h4>Continuous Learning</h4>
+
+                    <p>
+                        I continuously explore new technologies and
+                        improve my development knowledge and skills.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="strength-card">
+
+                    <div class="strength-icon">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+
+                    <h4>Creative Thinking</h4>
+
+                    <p>
+                        I focus on creating useful digital experiences
+                        through clean design and functional development.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MY GOAL -->
+
+<section class="about-custom-section">
+
+    <div class="container">
+
+        <div class="about-goal-box">
+
+            <i class="fa-solid fa-bullseye"></i>
+
+            <h2>My Goal & Vision</h2>
+
+            <p>
+                My goal is to grow as a skilled Full Stack Developer
+                by building innovative websites, powerful software systems
+                and mobile applications. I want to continuously learn,
+                explore modern technologies and create digital solutions
+                that provide real value to people and businesses.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT CTA -->
+
+<section class="contact-cta section-padding">
+
+    <div class="container">
+
+        <div class="contact-cta-content">
+
+            <span>LET'S CONNECT</span>
+
+            <h2>
+                Have a Project in
+                <span>Mind?</span>
+            </h2>
+
+            <p>
+                Let's discuss your ideas and turn them into
+                something meaningful through technology.
+            </p>
+
+            <a href="contact.html" class="primary-btn">
+                Contact Me
+                <i class="fa-solid fa-paper-plane"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="portfolio-footer">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-lg-5 col-md-6">
+
+                <h4>Laiba <span>Azam</span></h4>
+
+                <p>
+                    Full Stack Developer creating modern websites,
+                    complete software solutions and mobile applications.
+                </p>
+
+                <div class="footer-social">
+
+                    <a href="https://github.com/laibaazam10" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="mailto:laibaazam116@gmail.com">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <h5>Quick Links</h5>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="certificate.html">Certificates</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="col-lg-4 col-md-6">
+
+                <h5>Contact Information</h5>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    laibaazam116@gmail.com
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    0340 4858943
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Karachi, Pakistan
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="year"></span> Laiba Azam. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+```

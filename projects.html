@@ -1,0 +1,829 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Projects | Laiba Azam</title>
+
+  <meta name="description" content="Explore projects developed by Laiba Azam, Full Stack Developer.">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    body {
+      background: #071e23;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* HERO */
+
+    .portfolio-hero {
+      background: linear-gradient(135deg, #071e23, #0b3037, #134e5e);
+      padding: 150px 0 85px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .portfolio-hero::before,
+    .portfolio-hero::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(91, 186, 213, 0.15);
+      border-radius: 50%;
+    }
+
+    .portfolio-hero::before {
+      width: 350px;
+      height: 350px;
+      top: -150px;
+      right: -80px;
+    }
+
+    .portfolio-hero::after {
+      width: 250px;
+      height: 250px;
+      bottom: -150px;
+      left: -70px;
+    }
+
+    .portfolio-hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .portfolio-tag {
+      color: #5bbad5;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+    }
+
+    .portfolio-hero h1 {
+      color: #fff;
+      font-size: clamp(35px, 5vw, 55px);
+      font-weight: 800;
+      margin: 18px 0;
+    }
+
+    .portfolio-hero h1 span {
+      color: #5bbad5;
+    }
+
+    .portfolio-hero p {
+      color: #c1d4d8;
+      max-width: 750px;
+      margin: auto;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .portfolio-breadcrumb {
+      margin-top: 25px;
+      color: #b1cbd0;
+      font-size: 13px;
+    }
+
+    .portfolio-breadcrumb a {
+      color: #5bbad5;
+      text-decoration: none;
+    }
+
+    /* FILTER */
+
+    .portfolio-filter {
+      padding: 35px 15px 10px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .portfolio-filter a {
+      text-decoration: none;
+      color: #c3d4d8;
+      border: 1px solid rgba(91, 186, 213, 0.3);
+      padding: 11px 25px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .portfolio-filter a:hover,
+    .portfolio-filter a.active {
+      background: #5bbad5;
+      color: #071e23;
+      border-color: #5bbad5;
+    }
+
+    /* PROJECT SECTION */
+
+    .projects-main {
+      background: #071e23;
+      padding: 35px 0 90px;
+    }
+
+    .projects-heading {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .projects-heading span {
+      color: #5bbad5;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+    }
+
+    .projects-heading h2 {
+      color: #fff;
+      font-size: 34px;
+      font-weight: 700;
+      margin: 12px 0;
+    }
+
+    .projects-heading h2 span {
+      color: #5bbad5;
+      font-size: inherit;
+      letter-spacing: 0;
+    }
+
+    .projects-heading p {
+      color: #9fb8bd;
+      font-size: 13px;
+    }
+
+    /* PROJECT CARDS */
+
+    .portfolio-project-card {
+      background: #0d343d;
+      border: 1px solid rgba(91, 186, 213, 0.15);
+      border-radius: 16px;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: 0.35s;
+    }
+
+    .portfolio-project-card:hover {
+      transform: translateY(-9px);
+      border-color: #5bbad5;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-image-wrapper {
+      height: 230px;
+      overflow: hidden;
+      position: relative;
+      background: #134e5e;
+    }
+
+    .project-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    .portfolio-project-card:hover .project-image-wrapper img {
+      transform: scale(1.07);
+    }
+
+    .project-number {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: #5bbad5;
+      color: #071e23;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .project-card-body {
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .project-category {
+      display: inline-block;
+      width: fit-content;
+      color: #5bbad5;
+      background: rgba(91, 186, 213, 0.12);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+
+    .project-card-body h3 {
+      color: #fff;
+      font-size: 19px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .project-card-body p {
+      color: #a9bec2;
+      font-size: 12px;
+      line-height: 1.9;
+      margin-bottom: 22px;
+      flex: 1;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: fit-content;
+      background: #5bbad5;
+      color: #071e23;
+      text-decoration: none;
+      padding: 10px 19px;
+      border-radius: 7px;
+      font-size: 12px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .project-link:hover {
+      background: #fff;
+      color: #071e23;
+    }
+
+    /* CTA */
+
+    .projects-cta {
+      padding: 0 0 90px;
+      background: #071e23;
+    }
+
+    .projects-cta-box {
+      background: linear-gradient(135deg, #0b3037, #134e5e);
+      border: 1px solid rgba(91, 186, 213, 0.2);
+      border-radius: 20px;
+      padding: 55px 25px;
+      text-align: center;
+    }
+
+    .projects-cta-box h2 {
+      color: #fff;
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    .projects-cta-box h2 span {
+      color: #5bbad5;
+    }
+
+    .projects-cta-box p {
+      color: #c1d4d8;
+      font-size: 13px;
+      margin: 15px 0 25px;
+    }
+
+    .projects-cta-btn {
+      display: inline-block;
+      background: #5bbad5;
+      color: #071e23;
+      padding: 12px 27px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .projects-cta-btn:hover {
+      background: #fff;
+      color: #071e23;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width: 768px) {
+      .portfolio-hero {
+        padding: 125px 15px 65px;
+      }
+
+      .portfolio-hero h1 {
+        font-size: 36px;
+      }
+
+      .projects-heading h2 {
+        font-size: 27px;
+      }
+
+      .project-image-wrapper {
+        height: 210px;
+      }
+
+      .projects-cta-box h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top portfolio-navbar">
+      <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+          Laiba <span>Azam</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNav" aria-controls="navbarNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+
+          <ul class="navbar-nav align-items-lg-center gap-lg-3">
+
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">About</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="./projects.html">Projects</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./certificate.html">Certificates</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">Contact</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="./image/newCV.pdf" download class="nav-resume">
+                Download CV <i class="fa-solid fa-download"></i>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="portfolio-hero">
+
+    <div class="container portfolio-hero-content">
+
+      <span class="portfolio-tag">EXPLORE MY WORK</span>
+
+      <h1>My <span>Portfolio</span></h1>
+
+      <p>
+        Welcome to my project showcase. Here you can explore websites,
+        software solutions and development projects I have worked on.
+        Each project represents my creativity, technical knowledge
+        and passion for building digital experiences.
+      </p>
+
+      <div class="portfolio-breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-angle-right mx-2"></i>
+        Portfolio
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECT FILTER -->
+
+  <div class="portfolio-filter">
+
+    <a href="projects.html" class="active">
+      <i class="fa-solid fa-code me-2"></i> Projects
+    </a>
+
+    <a href="certificate.html">
+      <i class="fa-solid fa-award me-2"></i> Certificates
+    </a>
+
+    <a href="techstar.html">
+      <i class="fa-solid fa-star me-2"></i> Tech Star
+    </a>
+
+  </div>
+
+  <!-- PROJECTS -->
+
+  <section class="projects-main" id="projects">
+
+    <div class="container">
+
+      <div class="projects-heading">
+
+        <span>MY RECENT WORK</span>
+
+        <h2>Featured <span>Projects</span></h2>
+
+        <p>
+          A collection of my web development and software projects.
+          Click on any project to explore it.
+        </p>
+
+      </div>
+
+      <div class="row g-4">
+
+        <!-- PROJECT 1 -->
+
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-project-card">
+
+            <div class="project-image-wrapper">
+              <img src="./image/business.png" alt="Business Website Project">
+              <div class="project-number">01</div>
+            </div>
+
+            <div class="project-card-body">
+              <span class="project-category">WEB DEVELOPMENT</span>
+              <h3>Business Website</h3>
+
+              <p>
+                A modern business website with a responsive layout
+                and professional user interface.
+              </p>
+
+              <a href="https://laibaazam10.github.io/business-work/"
+                target="_blank" rel="noopener noreferrer" class="project-link">
+                View Project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PROJECT 2 -->
+
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-project-card">
+
+            <div class="project-image-wrapper">
+              <img src="./image/dcraee.png" alt="The D Care Website">
+              <div class="project-number">02</div>
+            </div>
+
+            <div class="project-card-body">
+              <span class="project-category">MEDICAL WEBSITE</span>
+              <h3>The D Care</h3>
+
+              <p>
+                A professional medical equipment company website
+                designed with a clean and responsive layout.
+              </p>
+
+              <a href="https://laibaazam10.github.io/checkDcare/"
+                target="_blank" rel="noopener noreferrer" class="project-link">
+                View Project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PROJECT 3 -->
+
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-project-card">
+
+            <div class="project-image-wrapper">
+              <img src="./image/cuirr.png" alt="Cuir Collection Website">
+              <div class="project-number">03</div>
+            </div>
+
+            <div class="project-card-body">
+              <span class="project-category">E-COMMERCE</span>
+              <h3>Cuir Collection</h3>
+
+              <p>
+                A leather brand e-commerce website with an elegant
+                shopping experience and product display.
+              </p>
+
+              <a href="https://www.cuircollection.com"
+                target="_blank" rel="noopener noreferrer" class="project-link">
+                View Project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PROJECT 4 -->
+
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-project-card">
+
+            <div class="project-image-wrapper">
+              <img src="./image/Screenshot 2026-06-11 115327.png"
+                alt="Online Healthcare Consultation">
+              <div class="project-number">04</div>
+            </div>
+
+            <div class="project-card-body">
+              <span class="project-category">HEALTHCARE PROJECT</span>
+              <h3>Online Healthcare Consultation</h3>
+
+              <p>
+                A healthcare consultation project showcasing
+                an online medical service concept.
+              </p>
+
+              <a href="./image/Online Asthetiq E.pdf"
+                target="_blank" rel="noopener noreferrer" class="project-link">
+                View Project <i class="fa-solid fa-file-pdf"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PROJECT 5 -->
+
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-project-card">
+
+            <div class="project-image-wrapper">
+              <img src="./image/Screenshot 2026-06-11 112312.png"
+                alt="Online Healthcare Consultation Project">
+              <div class="project-number">05</div>
+            </div>
+
+            <div class="project-card-body">
+              <span class="project-category">WEB DESIGN</span>
+              <h3>Online Healthcare Consultation</h3>
+
+              <p>
+                An online healthcare consultation platform that allows
+                patients to connect with healthcare professionals,
+                get medical guidance and access healthcare services.
+              </p>
+
+              <a href="./image/Online HealthCare Consultation Project.pdf"
+                target="_blank" rel="noopener noreferrer" class="project-link">
+                View Project <i class="fa-solid fa-file-pdf"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PROJECT 6 -->
+
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-project-card">
+
+            <div class="project-image-wrapper">
+              <img src="./image/formm.png" alt="Product Calculation Project">
+              <div class="project-number">06</div>
+            </div>
+
+            <div class="project-card-body">
+              <span class="project-category">JAVASCRIPT PROJECT</span>
+              <h3>Product Calculation</h3>
+
+              <p>
+                A product calculation project demonstrating
+                JavaScript-based calculations and form functionality.
+              </p>
+
+              <a href="https://laibaazam10.github.io/product-calculation/"
+                target="_blank" rel="noopener noreferrer" class="project-link">
+                View Project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PROJECT 7 -->
+
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-project-card">
+
+            <div class="project-image-wrapper">
+              <img src="./image/marketlink pic.png"
+                alt="Marketlink Website">
+              <div class="project-number">07</div>
+            </div>
+
+            <div class="project-card-body">
+              <span class="project-category">MARKETPLACE WEBSITE</span>
+              <h3>Marketlink Website</h3>
+
+              <p>
+                A modern online marketplace platform designed to connect
+                buyers and sellers, showcase products and simplify shopping.
+              </p>
+
+              <a href="http://marketlink-project.tryasp.net/"
+                target="_blank" rel="noopener noreferrer" class="project-link">
+                View Project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PROJECT 8 -->
+
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-project-card">
+
+            <div class="project-image-wrapper">
+              <img src="./image/eventsphere pic.png"
+                alt="Eventsphere Website">
+              <div class="project-number">08</div>
+            </div>
+
+            <div class="project-card-body">
+              <span class="project-category">EVENT MANAGEMENT</span>
+              <h3>Eventsphere Website</h3>
+
+              <p>
+                An event management platform designed to simplify event
+                planning, manage bookings and organize events.
+              </p>
+
+              <a href="http://eventsphere.somee.com/"
+                target="_blank" rel="noopener noreferrer" class="project-link">
+                View Project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+
+  <section class="projects-cta">
+
+    <div class="container">
+
+      <div class="projects-cta-box">
+
+        <i class="fa-solid fa-lightbulb"
+          style="color:#5bbad5;font-size:35px;margin-bottom:20px;"></i>
+
+        <h2>Have an Idea? Let's Build Something <span>Amazing!</span></h2>
+
+        <p>
+          Interested in working together? Let's connect
+          and turn your ideas into reality.
+        </p>
+
+        <a href="contact.html" class="projects-cta-btn">
+          Get In Touch
+          <i class="fa-solid fa-paper-plane ms-2"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer class="portfolio-footer">
+
+    <div class="container">
+
+      <div class="row g-4">
+
+        <div class="col-lg-5 col-md-6">
+
+          <h4>Laiba <span>Azam</span></h4>
+
+          <p>
+            Full Stack Developer creating modern websites,
+            complete software solutions and mobile applications.
+          </p>
+
+          <div class="footer-social">
+
+            <a href="https://github.com/laibaazam10"
+              target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/"
+              target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="mailto:laibaazam116@gmail.com">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+          <h5>Quick Links</h5>
+
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="certificate.html">Certificates</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+
+          <h5>Contact Information</h5>
+
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+            laibaazam116@gmail.com
+          </p>
+
+          <p>
+            <i class="fa-solid fa-phone"></i>
+            0340 4858943
+          </p>
+
+          <p>
+            <i class="fa-solid fa-location-dot"></i>
+            Karachi, Pakistan
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p>
+          © <span id="year"></span> Laiba Azam. All Rights Reserved.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
